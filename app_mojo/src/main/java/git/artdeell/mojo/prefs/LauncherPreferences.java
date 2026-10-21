@@ -40,6 +40,7 @@ public class LauncherPreferences {
     public static boolean PREF_DISABLE_GESTURES = false;
     public static boolean PREF_DISABLE_SWAP_HAND = false;
     public static float PREF_MOUSESPEED = 1f;
+	public static int PREF_TOUCHPAD_TRANSFORM = 0;
     public static int PREF_RAM_ALLOCATION;
     public static String PREF_DEFAULT_RUNTIME;
     public static boolean PREF_SUSTAINED_PERFORMANCE = false;
@@ -88,6 +89,11 @@ public class LauncherPreferences {
         PREF_BUTTONSIZE = DEFAULT_PREF.getInt("buttonscale", 100);
         PREF_MOUSESCALE = DEFAULT_PREF.getInt("mousescale", 100)/100f;
         PREF_MOUSESPEED = ((float)DEFAULT_PREF.getInt("mousespeed",100))/100f;
+		try {
+            PREF_TOUCHPAD_TRANSFORM = Integer.parseInt(DEFAULT_PREF.getString("touchpad_transform", "0"));
+        } catch (NumberFormatException e) {
+            PREF_TOUCHPAD_TRANSFORM = 0;
+        }
         PREF_IGNORE_NOTCH = DEFAULT_PREF.getBoolean("ignoreNotch", false);
 		PREF_LONGPRESS_TRIGGER = DEFAULT_PREF.getInt("timeLongPressTrigger", 300);
 		PREF_DEFAULTCTRL_PATH = DEFAULT_PREF.getString("defaultCtrl", Tools.CTRLDEF_FILE);
