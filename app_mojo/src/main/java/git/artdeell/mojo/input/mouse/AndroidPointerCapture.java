@@ -81,6 +81,7 @@ public class AndroidPointerCapture implements ViewTreeObserver.OnWindowFocusChan
             mPointerTracker.trackEvent(event);
             // The relative position will already be written down into the mVector variable.
         }
+        applyTouchpadTransform();
 
         // Avoid going through the JNI each time.
         if(!Platform.isGrabbing()) {
@@ -116,6 +117,15 @@ public class AndroidPointerCapture implements ViewTreeObserver.OnWindowFocusChan
                 return true;
             default:
                 return false;
+        }
+    }
+    private void applyTouchpadTransform() {
+        float x = mVector[0], y = mVector[1];
+        switch (LauncherPreferences.PREF_TOUCHPAD_TRANSFORM) {
+            case 1: mVector[0] = y;  mVector[1] = x;  break;
+            case 2: mVector[0] = y;  mVector[1] = -x; break;
+            case 3: mVector[0] = -y; mVector[1] = x;  break;
+            default: break;
         }
     }
 
