@@ -172,6 +172,20 @@
     <string name="mcl_disable_swap_hand">Disable double tap to swap hands</string>
     <string name="mcl_disable_swap_hand_subtitle">Disables double tapping on the hotbar item to swap it in the second hand.</string>
     <string name="mcl_setting_title_mousespeed">Mouse Speed</string>
+    <string name="mcl_setting_title_touchpad_transform">Touchpad axis fix</string>
+    <string name="mcl_setting_subtitle_touchpad_transform">Use if the keyboard-cover touchpad moves the camera along the wrong axis while the mouse is captured. Try each option until the movement matches.</string>
+    <string-array name="touchpad_transform_entries">
+        <item>Off</item>
+        <item>Swap X and Y</item>
+        <item>Rotate 90°</item>
+        <item>Rotate 270°</item>
+    </string-array>
+    <string-array name="touchpad_transform_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
     <string name="mcl_setting_subtitle_mousespeed">Changes the speed of the virtual mouse.</string>
     <string name="customctrl_passthru">Mouse pass-thru</string>
     <string name="customctrl_swipeable">Swipeable</string>
