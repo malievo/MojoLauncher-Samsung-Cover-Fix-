@@ -103,6 +103,14 @@
             android:max="@integer/mouse_speed_seekbar_max"
             app2:seekBarIncrement="@integer/mouse_speed_seekbar_increment"
             app2:showSeekBarValue="true" />
+        <androidx.preference.ListPreference
+            android:key="touchpad_transform"
+            android:defaultValue="0"
+            android:title="@string/mcl_setting_title_touchpad_transform"
+            android:summary="@string/mcl_setting_subtitle_touchpad_transform"
+            android:entries="@array/touchpad_transform_entries"
+            android:entryValues="@array/touchpad_transform_values"
+            app2:useSimpleSummaryProvider="true" />
         <SwitchPreferenceCompat
             android:key="mouse_start"
             android:title="@string/preference_mouse_start_title"
